@@ -16,7 +16,7 @@ func TestSchedule(t *testing.T) {
 	}
 	for name, tc := range tests {
 		t.Run(name, func(t *testing.T) {
-			if got, _ := Schedule(tc.in); !got.Equal(tc.want) {
+			if got := Schedule(tc.in); !got.Equal(tc.want) {
 				t.Errorf("Schedule(%s) = '%v', want '%v'", tc.in, got, tc.want)
 			}
 		})
